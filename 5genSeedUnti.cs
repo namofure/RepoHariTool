@@ -51,12 +51,7 @@ public class SeedSearcher
                 ulong CurrentSeed = 0x0;
                 Console.WriteLine("----------------------");
                 Console.WriteLine($"Seed:{SeedData.Seed:X16}");
-
-                //param.values[14]でPT消費、InSeedの決定
-                //とりあえず思い出リンクなし（Rand*3）でつくる
-                //SHA1→Rand×1→PT×5
-                //SHA1→Rand×1→PT×1→Rand×3→PT×4→Extra
-
+                
                 Seed = NextSeed(Seed);
                 Seed = ProbabilityTable(Seed);
 
@@ -357,3 +352,4 @@ public class SeedSearcher
                 ((values & 0xFF000000) >> 24);
     }
 }
+
